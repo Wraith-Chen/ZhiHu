@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ZhiHu</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_video">视频</string>
+    <string name="title_vip">会员</string>
+    <string name="title_message">消息</string>
+    <string name="title_mine">我的</string>
+</resources>
