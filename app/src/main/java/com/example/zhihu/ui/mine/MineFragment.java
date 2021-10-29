@@ -1,4 +1,4 @@
-package com.example.zhihu.ui.notifications;
+package com.example.zhihu.ui.mine;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.zhihu.databinding.FragmentVideoBinding;
+import com.example.zhihu.databinding.FragmentMineBinding;
 
-
-public class VipFragment extends Fragment {
-
-    private VipViewModel notificationsViewModel;
-    private FragmentVideoBinding binding;
+public class MineFragment extends Fragment {
+    private MineViewModel mineViewModel;
+    private FragmentMineBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(VipViewModel.class);
+        mineViewModel =
+                new ViewModelProvider(this).get(MineViewModel.class);
 
-        binding = FragmentVideoBinding.inflate(inflater, container, false);
+        binding = FragmentMineBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textVideo;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textMine;
+        mineViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

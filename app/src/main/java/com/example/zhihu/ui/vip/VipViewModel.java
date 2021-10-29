@@ -1,4 +1,4 @@
-package com.example.zhihu.ui.notifications;
+package com.example.zhihu.ui.vip;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

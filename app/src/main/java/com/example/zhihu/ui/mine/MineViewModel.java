@@ -1,16 +1,15 @@
-package com.example.zhihu.ui.dashboard;
+package com.example.zhihu.ui.mine;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class VideoViewModel extends ViewModel {
-
+public class MineViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public VideoViewModel() {
+    public MineViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is mine fragment");
     }
 
     public LiveData<String> getText() {

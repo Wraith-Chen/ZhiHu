@@ -1,4 +1,4 @@
-package com.example.zhihu.ui.dashboard;
+package com.example.zhihu.ui.video;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

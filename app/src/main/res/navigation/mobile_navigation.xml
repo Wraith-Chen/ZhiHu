@@ -13,14 +13,26 @@
 
     <fragment
         android:id="@+id/navigation_video"
-        android:name="com.example.zhihu.ui.dashboard.VideoFragment"
+        android:name="com.example.zhihu.ui.video.VideoFragment"
         android:label="@string/title_video"
         tools:layout="@layout/fragment_video" />
 
     <fragment
         android:id="@+id/navigation_vip"
-        android:name="com.example.zhihu.ui.notifications.VipFragment"
+        android:name="com.example.zhihu.ui.vip.VipFragment"
         android:label="会员"
         tools:layout="@layout/fragment_vip" />
+
+    <fragment
+        android:id="@+id/navigation_message"
+        android:name="com.example.zhihu.ui.message.MessageFragment"
+        android:label="消息"
+        tools:layout="@layout/fragment_message" />
+
+    <fragment
+        android:id="@+id/navigation_mine"
+        android:name="com.example.zhihu.ui.mine.MineFragment"
+        android:label="我的"
+        tools:layout="@layout/fragment_mine"/>
 
 </navigation>
