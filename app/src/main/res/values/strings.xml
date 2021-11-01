@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ZhiHu</string>
+    <string name="app_name">知乎</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_home">首页</string>
     <string name="title_video">视频</string>
