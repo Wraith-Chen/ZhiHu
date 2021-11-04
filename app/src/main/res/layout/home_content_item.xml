@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/content_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="标题标题标题标题标题标题标题"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/content_profile"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="19dp" />
+
+    <TextView
+        android:id="@+id/content_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="西邮吴彦祖"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="23dp" />
+
+    <ImageView
+        android:id="@+id/content_authentication"
+        android:layout_width="23dp"
+        android:layout_height="22dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
+        android:id="@+id/content_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已认证的官方账号"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="23dp" />
+
+    <TextView
+        android:id="@+id/content_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:maxLines="2"
+        android:text="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 1  2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <ImageView
+        android:id="@+id/content_picture"
+        android:layout_width="106dp"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/content_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="70亿赞同 · 15亿评论"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <ImageView
+        android:id="@+id/content_setting"
+        android:layout_width="40dp"
+        android:layout_height="11dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
