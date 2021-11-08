@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.zhihu.databinding.FragmentMessageBinding;
-import com.example.zhihu.ui.home.HomeViewModel;
 
 public class MessageFragment extends Fragment {
     private MessageViewModel messageViewModel;

@@ -1,4 +1,4 @@
-package com.example.zhihu.ui.home;
+package com.example.zhihu.ui.home.recommend;
 
 import android.widget.ImageView;
 
@@ -8,6 +8,18 @@ public class Content {
     private String name;
     private int authentication;
     private String information;
+    private String text;
+    private int picture;
+    private String comment;
+    private int setting;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 
     public String getTitle() {
         return title;
@@ -72,10 +84,5 @@ public class Content {
     public void setSetting(int setting) {
         this.setting = setting;
     }
-
-    private int picture;
-    private String comment;
-    private int setting;
-
 
 }
