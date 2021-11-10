@@ -1,8 +1,9 @@
 package com.example.zhihu.ui.home.recommend;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,13 +23,14 @@ public class RecommendFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.home_recommend,container, false);
+        view = inflater.inflate(R.layout.home_recommend, container, false);
         initcontent();
         initRecyclerView();
         return view;
     }
-    public void initcontent(){
-        for(int i = 0 ; i<20;i++){
+
+    public void initcontent() {
+        for (int i = 0; i < 20; i++) {
             Content content = new Content();
             content.setTitle("下一轮”双一流“，这些双飞稳了");
             content.setProfile(R.drawable.item_profile);
@@ -42,10 +44,73 @@ public class RecommendFragment extends Fragment {
             list.add(content);
         }
     }
-    private void initRecyclerView(){
+
+    private void initRecyclerView() {
+
         RecyclerView recyclerView = view.findViewById(R.id.recommend_recyclerview);
-        contentAdapter adapter = new contentAdapter(getActivity(),list);
+        contentAdapter adapter = new contentAdapter(getActivity(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+            private float mEndY;
+            private float mStartY;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        mStartY = event.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        mEndY = event.getY();
+                        float v1 = mEndY - mStartY;
+                        if (v1 > 0) {
+                            //我这个是在fragment中的操作 这个是获取activity中的布局
+                            getActivity().findViewById(R.id.home_title).setVisibility(View.VISIBLE);
+                            //这个就是当前页面的头布局id
+                        } else if (v1 < 0) {
+                            getActivity().findViewById(R.id.home_title).setVisibility(View.GONE);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        break;
+                }
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
     }
+
+    GestureDetector gestureDetector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
+        @Override
+        public boolean onDown(MotionEvent e) {
+            return false;
+        }
+
+        @Override
+        public void onShowPress(MotionEvent e) {
+
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            // do something
+            return true;
+        }
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent e) {
+
+        }
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            return false;
+        }
+    });
 }
+

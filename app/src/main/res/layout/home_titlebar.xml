@@ -12,8 +12,6 @@
         android:id="@+id/home_title_live"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:background="@mipmap/home_title_live"
         android:visibility="visible"
         app:backgroundTint="#575757"

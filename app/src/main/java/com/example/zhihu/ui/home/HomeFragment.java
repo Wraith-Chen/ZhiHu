@@ -25,6 +25,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,5 +98,4 @@ public class HomeFragment extends Fragment {
             return list.size();
         }
     }
-
 }
