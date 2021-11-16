@@ -18,6 +18,7 @@ public class Spalsh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();//隐藏标题栏
         setContentView(R.layout.activity_spalsh);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

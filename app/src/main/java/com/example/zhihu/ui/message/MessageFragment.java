@@ -9,36 +9,79 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.zhihu.R;
 import com.example.zhihu.databinding.FragmentMessageBinding;
+import com.example.zhihu.ui.home.HomeFragment;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessageFragment extends Fragment {
-    private MessageViewModel messageViewModel;
-    private FragmentMessageBinding binding;
+
+    private String[] tabs = {"动态", "消息"};
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        messageViewModel =
-                new ViewModelProvider(this).get(MessageViewModel.class);
+        View view = inflater.inflate(R.layout.fragment_message, container, false);
+        initView(view);
+        return view;
+    }
 
-        binding = FragmentMessageBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    private void initView(View view){
 
-        final TextView textView = binding.textMessage;
-        messageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        TabLayout tabLayout = view.findViewById(R.id.message_toolbar_tablayout);
+        ViewPager2 viewPager = view.findViewById(R.id.message_toolbar_viewpager);
+
+        List<Fragment> list  = new ArrayList<>();
+        list.add(new DynamicFragment());
+        list.add(new ChatFragment());
+
+
+        MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getActivity(), list);
+        viewPager.setAdapter(adapter);
+
+        new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onConfigureTab(@NonNull @NotNull TabLayout.Tab tab, int position) {
+                tab.setText(tabs[position]);
             }
-        });
-        return root;
+        }).attach();
+    }
+
+    static class MyFragmentPagerAdapter extends FragmentStateAdapter {
+
+        List<Fragment> list;
+
+        public MyFragmentPagerAdapter(FragmentActivity fa, List<Fragment> list) {
+            super(fa);
+            this.list = list;
+
+        }
+        @NonNull
+        @NotNull
+        @Override
+        public Fragment createFragment(int position) {
+            return list.get(position);
+        }
+
+        @Override
+        public int getItemCount() {
+            return list.size();
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 }
