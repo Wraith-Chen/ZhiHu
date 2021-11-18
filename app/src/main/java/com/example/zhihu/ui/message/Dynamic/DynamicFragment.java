@@ -1,4 +1,4 @@
-package com.example.zhihu.ui.message;
+package com.example.zhihu.ui.message.Dynamic;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,8 +19,14 @@ public class DynamicFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.message_dynamic,container,false);
+        initContext();
+        initRecyclerView();
         return view;
     }
+    public void initRecyclerView(){
 
+    }
+    public void initContext(){
 
+    }
 }

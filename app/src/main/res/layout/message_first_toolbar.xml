@@ -18,9 +18,14 @@
         android:id="@+id/message_toolbar_tablayout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/message_toolbar_mespicture"
         app:layout_constraintStart_toEndOf="@+id/message_toolbar_setting"
         app:layout_constraintTop_toTopOf="parent"
-        />
+
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/dynamic_unselect"
+        app:tabIndicatorColor="@color/black"/>
 
     <ImageView
         android:id="@+id/message_toolbar_mespicture"

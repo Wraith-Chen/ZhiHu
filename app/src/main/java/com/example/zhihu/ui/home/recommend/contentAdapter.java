@@ -17,8 +17,6 @@ import java.util.List;
 
 public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHolder>{
 
-    private OnItemClickListener onItemClickListener;
-    private Context context;
     private List<Content> list;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -90,11 +88,4 @@ public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHold
         return list.size();
     }
 
-    public interface OnItemClickListener {
-        public void OnItemClick(View view, Content data);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
 }

@@ -23,10 +23,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_title"
-        app:tabIndicatorColor="@color/gray"
+        app:tabIndicatorColor="@color/blue"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/blue"
-        app:tabTextColor="@color/black" />
+        app:tabTextColor="@color/black"
+        app:tabIndicatorFullWidth="false"
+        />
 
 
 

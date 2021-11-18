@@ -4,20 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.zhihu.R;
-import com.example.zhihu.databinding.FragmentMessageBinding;
-import com.example.zhihu.ui.home.HomeFragment;
+import com.example.zhihu.ui.message.Dynamic.DynamicFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -49,6 +44,7 @@ public class MessageFragment extends Fragment {
 
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getActivity(), list);
         viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(1);
 
         new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

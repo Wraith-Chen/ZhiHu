@@ -4,16 +4,26 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
-        android:id="@+id/message_top"
-        layout="@layout/message_first_toolbar"
-        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/message_top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/message_top"
+            layout="@layout/message_first_toolbar" />
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/message_toolbar_viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/message_top"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_top_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
