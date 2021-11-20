@@ -15,7 +15,7 @@ import com.example.zhihu.R;
 
 import java.util.List;
 
-public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHolder>{
+public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHolder> {
 
     private List<Content> list;
 
@@ -34,7 +34,7 @@ public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHold
 
         public ViewHolder(View view) {
             super(view);
-            contentview=view;
+            contentview = view;
             title = view.findViewById(R.id.content_title);
             profile = view.findViewById(R.id.content_profile);
             name = view.findViewById(R.id.content_name);
@@ -51,20 +51,22 @@ public class contentAdapter extends RecyclerView.Adapter<contentAdapter.ViewHold
             });
         }
     }
-    public contentAdapter(FragmentActivity activity, List<Content> list){
-        this.list=list;
+
+    public contentAdapter(FragmentActivity activity, List<Content> list) {
+        this.list = list;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recommend_item,parent,false);
-        final ViewHolder holder=new ViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_recommend_item, parent, false);
+        final ViewHolder holder = new ViewHolder(view);
         holder.contentview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position= holder.getAdapterPosition();
-                Content content=list.get(position);
-                Toast.makeText(view.getContext(), "you clicked View" + content.getName(), Toast.LENGTH_SHORT).show();            }
+                int position = holder.getAdapterPosition();
+                Content content = list.get(position);
+                Toast.makeText(view.getContext(), "you clicked View" + content.getName(), Toast.LENGTH_SHORT).show();
+            }
         });
         return holder;
     }

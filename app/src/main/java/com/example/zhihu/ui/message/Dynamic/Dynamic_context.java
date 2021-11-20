@@ -5,6 +5,8 @@ public class Dynamic_context {
     private String name;
     private String state;
     private String context;
+    private String information;
+    private int picture;
 
     public int getProfile() {
         return profile;
@@ -54,6 +56,4 @@ public class Dynamic_context {
         this.picture = picture;
     }
 
-    private String information;
-    private int picture;
 }

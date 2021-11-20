@@ -50,6 +50,7 @@ public class MessageFragment extends Fragment {
             @Override
             public void onConfigureTab(@NonNull @NotNull TabLayout.Tab tab, int position) {
                 tab.setText(tabs[position]);
+
             }
         }).attach();
     }

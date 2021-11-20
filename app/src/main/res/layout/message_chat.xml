@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#EFEFEF">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -10,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white">
 <LinearLayout
     android:id="@+id/chat_1"
     android:layout_width="wrap_content"
@@ -125,32 +127,142 @@
             android:textStyle="bold"/>
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/chat_context_card1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:layout_constraintTop_toBottomOf="@id/chat_top"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="10dp"
         app:cardElevation="0dp"
+        android:background="@color/white"
         >
-
-        <com.example.zhihu.RoundImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:paddingTop="9dp"
+    >
+    <androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="30dp">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@color/black"/>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="知乎活动助手"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_marginLeft="300dp"
+        android:textSize="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:text="11-05"/>
+
+
+    <TextView
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="看《英雄联盟：双城之战》有奖品" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/gray"
+        app:layout_constraintStart_toStartOf="parent" />
+</RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chat_context_card2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_context_card1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardElevation="0dp"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:paddingTop="9dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="30dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/item_profile2"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="系统消息"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_marginLeft="300dp"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="08-06"/>
+
+
+            <TextView
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="徽章小助手恭喜你获得一个徽章" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginBottom="0dp"
+                android:background="@color/gray"
+                app:layout_constraintStart_toStartOf="parent" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="625dp"
+    android:text="没有更多内容"
+    android:textColor="#B8B8B8"
+    android:background="#EFEFEF"
+    app:layout_constraintTop_toBottomOf="@+id/chat_context_card2"
+    app:layout_constraintStart_toStartOf="parent"
+    android:gravity="center_horizontal"
+    android:padding="15dp"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

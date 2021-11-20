@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
     <VideoView
         android:id="@+id/video_view"
+        android:layout_marginTop="61dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
