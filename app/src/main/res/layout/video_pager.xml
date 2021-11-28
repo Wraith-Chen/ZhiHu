@@ -105,5 +105,6 @@
         android:alpha="0"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/play_arrow" />
+        android:src="@drawable/play_arrow">
+    </ImageView>
 </RelativeLayout>

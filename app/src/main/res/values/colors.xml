@@ -13,4 +13,7 @@
     <color name="blue">#1D87DC</color>
     <color name="dynamic_unselect">#9C9B9B</color>
     <color name="title_change">#0F3237</color>
+    <color name="gold">#F3D7C3</color>
+    <color name="gold_2">#ECA46F</color>
+    <color name="gold_text">#7A431A</color>
 </resources>
